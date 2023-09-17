@@ -4,6 +4,7 @@ import RangeInput from './rangeInput/RangeInput';
 import BgRotateWrapper from './Wrappers/BgRotateWrapper';
 
 import Button from '../components/Button/Button'
+import PostType from './PostType';
 
 export default function AdvancedSearchBox() {
 
@@ -24,21 +25,17 @@ export default function AdvancedSearchBox() {
 
   return (
   
-    <div className=' bg-color-3 flex flex-col justify-center items-center w-full rounded-md p-3  mb-14  space-y-8'>
+    <div className=' bg-color-3 flex flex-col justify-center items-center w-full rounded-md shadow-md p-3  mb-14  space-y-8'>
         <div className=' w-full flex justify-around items-center'>
         <div className=' bg-transparent  flex justify-center items-center text-color-1'>
             <span className=' text-md font-bold  ml-2'> نوع </span>
-            <div className=' flex justify-between shadow-xl items-center bg-color-4 rounded-xl p-2 text-color-1 font-semibold text-sm'>
-                <a href="#" className=' custom-hover-btn '><span > فیلم </span></a>
-                <a href="#" className=' custom-hover-btn '><span > سریال </span></a>
-                {/* <a href="#"><span className=' font-semibold text-sm mx-2 text-white'> انیمیشن </span></a> */}
-                </div>
+            <PostType/>
         </div>
         <div className=' bg-transparent  flex justify-center items-center text-color-1 font-semibold'>
             <span className=' text-md  font-bold ml-2'> ژانر </span>
-            <select className=' bg-color-4 shadow-xl outline-none rounded-xl p-2 text-sm' >
-                <option value=""> </option>
-                <option value="">جنایی </option>
+            <select className=' bg-color-4 shadow-md outline-none rounded-xl p-2 text-sm' >
+                <option className='' value=""> </option>
+                <option className='' value="">جنایی </option>
                 <option value=""> ترسناک </option>
                 <option value=""> درام </option>
                 <option value=""> معمایی </option>
@@ -46,7 +43,7 @@ export default function AdvancedSearchBox() {
         </div>
         <div className=' bg-transparent  flex justify-center items-center text-color-1 font-semibold'>
             <span className=' text-md font-bold  ml-2'> کشور </span>
-            <select className=' bg-color-4 shadow-xl outline-none rounded-xl p-2 text-sm' >
+            <select className=' bg-color-4 shadow-md outline-none rounded-xl p-2 text-sm' >
             <option value=""> </option>
                 <option className=' ' value=""> اسپانیا</option>
                 <option className=' ' value=""> آمریکا</option>
@@ -58,7 +55,7 @@ export default function AdvancedSearchBox() {
         </div>
         <div className=' bg-transparent  flex justify-center items-center text-color-1 font-semibold'>
             <span className=' text-md font-bold ml-2'> وضعیت پخش </span>
-            <select className=' bg-color-4 shadow-xl outline-none rounded-xl p-2 text-sm' name="" id="">
+            <select className=' bg-color-4 shadow-md outline-none rounded-xl p-2 text-sm' name="" id="">
             <option value=""> </option>
                 <option value=""> در حال پخش</option>
                 <option value="">  پایان یافته </option>

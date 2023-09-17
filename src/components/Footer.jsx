@@ -5,7 +5,7 @@ import SocialMediaButton from './Button/SocialMediaButton';
 import Logo from './Logo';
 
 
-export default function Footer() {
+export default function Footer({theme}) {
   return (
     <>
     <div className=" w-10/12 bg-color-1 right-8  -rotate-2 rounded-3xl h-12 absolute shadow-lg"></div>
@@ -51,13 +51,13 @@ export default function Footer() {
       <ul className=' flex justify-center items-center'>
         <li>
           
-            <SocialMediaButton hover= 'bg-pink-700'>
+            <SocialMediaButton hover= 'hover:bg-pink-700'>
               <BiLogoInstagram className='text-2xl'/>
             </SocialMediaButton>
         </li>
         <li>
             
-            <SocialMediaButton hover='bg-blue-700'>
+            <SocialMediaButton hover='hover:bg-blue-700'>
               <BiLogoTelegram className='text-2xl'/>
             </SocialMediaButton>
         </li>
@@ -66,8 +66,8 @@ export default function Footer() {
      </div>
       </div>
       <div className="flex flex-col justify-center items-center space-y-3">
-        <hr className=' w-11/12 text-color-1 opacity-5 ' />
-    <p className=' text-color-1 text-sm font-thin '> تمامی حقوق مادی و معنوی این سایت محفوظ میباشد </p>
+        <hr className={` w-11/12 text-color-1 ${theme === 'dark' ? "opacity-5" : ""} `} />
+    <p className=' text-color-1 opacity-80 text-sm font-thin '> تمامی حقوق مادی و معنوی این سایت محفوظ میباشد </p>
       </div>
       </div>
       </div>

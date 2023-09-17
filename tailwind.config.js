@@ -18,7 +18,8 @@ export default {
 
           color:{
             1:'var(--text-color)',
-            2:'var(--color)'
+            2:'var(--color)',
+            3: 'var(--bg-color-2)'
           }
            
       },

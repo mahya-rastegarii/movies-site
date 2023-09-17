@@ -28,7 +28,7 @@ export default function
                 </div>
                 <span className=' bg-color-hover shadow-md px-2 rounded-md font-bold text-color-1 text-md'> IMDb </span>
               </div> */}
-              <ImdbLabel/>
+              <ImdbLabel textColor='text-color-1'/>
         </div>
         <div className="flex w-full flex-col text-color-1 text-bold space-y-3 ">
         <div className=' flex justify-start opacity-60 items-center my-4 text-color-1 text-sm'>

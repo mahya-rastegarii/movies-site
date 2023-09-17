@@ -5,6 +5,7 @@ import { BsSun, BsMoon } from 'react-icons/bs';
 import { LuLogIn, LuUserPlus } from 'react-icons/lu';
 import Button from './Button/Button';
 import Logo from './Logo';
+import NavSearchBar from './Search/NavSearchBar';
 
 
 export default function Navbar() {
@@ -40,7 +41,8 @@ export default function Navbar() {
         </ul>
       </div>
       <div className='w-full px-2 flex justify-end items-center'>
-       <div className=' ml-6 w-6/12 drop-shadow-md bg-color-4 py-1 transition-all px-3 rounded-md flex justify-between items-center  '> <input className=' w-full focus:placeholder:text-slate-700 text-slate-200 bg-transparent transition-all outline-none placeholder:text-slate-500input-search '  type="text" placeholder="جست و جو کنید ..." /> <FiSearch className=' text-yellow-500 text-xl'/></div>
+       {/* <div className=' ml-6 w-6/12 drop-shadow-md bg-color-4 py-1 transition-all px-3 rounded-md flex justify-between items-center  '> <input className=' w-full focus:placeholder:text-slate-700 text-slate-200 bg-transparent transition-all outline-none placeholder:text-slate-500input-search '  type="text" placeholder="جست و جو کنید ..." /> <FiSearch className=' text-yellow-500 text-xl'/></div> */}
+       <NavSearchBar/>
        <a href='/'> <Logo size=' text-4xl'/></a>
       </div>
     

@@ -60,10 +60,10 @@ export default function SimpleSlider({ title, images}) {
           
           >
       {images.map((slide, index) => (
-        <SwiperSlide className="  bg-center bg-cover w-full h-64 flex justify-center items-center"  key={index}>
+        <SwiperSlide className="  bg-center bg-cover w-full h-64 flex justify-center items-center "  key={index}>
           <div className=' w-full h-full  flex flex-col justify-center items-center'>
-          <img className="  w-full h-64 rounded-md cursor-pointer" src={slide.image} alt={slide.name} />
-          <div className='  px-2 -mt-3   rounded-lg shadow-xl text-black  bg-color-hover '>
+          <img className="  w-full h-64 rounded-md cursor-pointer shadow-md" src={slide.image} alt={slide.name} />
+          <div className='  px-2 -mt-3   rounded-lg shadow-md text-black  bg-color-hover '>
             <span className='text-md font-bold '>7.3</span>
             <span className='text-sm '>/10</span>
             </div>
