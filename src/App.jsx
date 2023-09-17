@@ -14,7 +14,7 @@ import Register from './pages/Register';
 function App() {
 
   const [backToTop, setBackToTop] =useState(false);
- 
+
     
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -33,13 +33,13 @@ function App() {
 
   
   return (
-    <div className="w-full relative bg-color-4">
+    <div className="w-full relative bg-color-4 dark:theme-dark custom-transition">
     <Navbar/>
-    {/* <Home/> */}
+    <Home/>
     {/* <ShowList/> */}
     {/* <Dashboard/> */}
     {/* <Movie/> */}
-    <Login/>
+    {/* <Login/> */}
     {/* <Register/> */}
 
    

@@ -3,9 +3,12 @@ import { PiFilmSlateLight, PiFilmReelLight } from 'react-icons/pi';
 import { BiLogoTelegram, BiLogoInstagram } from 'react-icons/bi';
 import SocialMediaButton from './Button/SocialMediaButton';
 import Logo from './Logo';
+import { useThemeContext } from '../Context/ThemeContext';
 
 
-export default function Footer({theme}) {
+export default function Footer() {
+
+ const {theme}= useThemeContext();
   return (
     <>
     <div className=" w-10/12 bg-color-1 right-8  -rotate-2 rounded-3xl h-12 absolute shadow-lg"></div>

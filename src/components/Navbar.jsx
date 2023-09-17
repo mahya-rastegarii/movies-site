@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 
-import {FiSearch} from 'react-icons/fi';
 import { BsSun, BsMoon } from 'react-icons/bs';
 import { LuLogIn, LuUserPlus } from 'react-icons/lu';
 import Button from './Button/Button';
 import Logo from './Logo';
 import NavSearchBar from './Search/NavSearchBar';
-
+import { useThemeContext } from '../Context/ThemeContext';
 
 export default function Navbar() {
+  
+  const {theme, setTheme} = useThemeContext()
+
+  const element = document.documentElement
+
+  const changeTheme = () => {
+    if(theme === "dark") {
+      setTheme("light")
+      element.classList.remove('dark')
+    } else {
+      setTheme('dark')
+      element.classList.add('dark')
+    }
+    
+  }
+
+
   return (
     <div className=' w-full relative bg-color-3 border-b border-color-1 overflow-x-hidden p-6 flex justify-between items-center '>
       <div className=' w-full px-2 '>
@@ -28,7 +44,12 @@ export default function Navbar() {
 
           </li>
           <li>
-      <button className=' outline-none custom-transition '><BsSun className=' text-color-2  inline text-2xl'/></button>
+      <button className=' outline-none custom-transition ' onClick={changeTheme}>
+
+        {
+          theme === "dark" ? <BsSun className=' text-color-2  inline text-2xl'/> : <BsMoon className=' text-color-2  inline text-2xl'/>
+        }
+      </button>
 
           </li>
           <li className=''>
