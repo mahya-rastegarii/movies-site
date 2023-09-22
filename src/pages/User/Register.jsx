@@ -1,15 +1,15 @@
 import React from 'react';
 
-import BgRotateWrapper from '../components/Wrappers/BgRotateWrapper'
-import Form from '../components/Form/Form'
-import FormInput from '../components/Form/FormInput'
-import Button from '../components/Button/Button';
+import BgRotate from '../../components/BgRotate/BgRotate'
+import Form from '../../components/Form/Form'
+import FormInput from '../../components/input/formInput/FormInput'
+import Button from '../../components/Button/Button';
 
 export default function Register() {
   return (
     
-    <div className='w-full flex justify-center items-center h-screen'>
-       <BgRotateWrapper padding='p-2' width='w-4/12'>
+    <div className='w-full flex justify-center items-center px-4 md:px-0 h-screen'>
+       <BgRotate padding='p-2' width=' md:w-8/12 w-full lg:w-4/12'>
 
       <Form>
         <FormInput type="text" placeholder="نام کاربری"/>
@@ -26,7 +26,7 @@ export default function Register() {
        </div>
         {/* <button className=' bg-color-4 p-2 rounded-md w-full text-color-1 text-lg '> ثبت نام </button> */}
       </Form>
-       </BgRotateWrapper>
+       </BgRotate>
     </div>
   )
 }

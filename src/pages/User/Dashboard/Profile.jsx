@@ -1,15 +1,15 @@
 import React from 'react'
 
-import ProfilePhoto from '../../assets/img/user.png'
+import ProfilePhoto from '../../../assets/img/user.png'
 
-import Form from '../../components/Form/Form'
-import FormInput from '../../components/Form/FormInput'
-import Button from '../../components/Button/Button'
+import Form from '../../../components/Form/Form'
+import FormInput from '../../../components/input/formInput/FormInput'
+import Button from '../../../components/Button/Button'
 export default function Profile() {
  
   return (
 
-    <div className=' flex flex-col justify-center py-16 items-center space-y-14 text-color-1'>
+    <div className=' flex flex-col justify-center py-4 items-center space-y-14 text-color-1'>
       <div className="flex flex-col justify-center items-center space-y-4">
 
                 <img className=' rounded-full  ' src={ProfilePhoto} width={122} alt="ProfilePhoto" />
@@ -18,7 +18,7 @@ export default function Profile() {
                 </Button>
                 {/* <button className=' font-bold bg-slate-900 p-2 rounded-md shadow-md custom-transition hover:bg-slate-700 '>تغییر عکس پروفایل</button> */}
       </div>
-             
+             k
                   {/* <form  >
                     <div className="w-full flex flex-col justify-center items-center space-y-6"> */}
                     <Form>

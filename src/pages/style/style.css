@@ -7,7 +7,7 @@
     :root{
       
       --text-color:rgb(31, 29, 29);
-      --color :rgb(234 179 8);
+      --color :rgb(202 138 4);
       --bg-color-1:rgb(203 213 225);
       --bg-color-2 :rgb(226 232 240);
       --bg-color-3 :rgb(241 245 249);
@@ -29,7 +29,7 @@
 
 
 .custom-transition{
-    @apply transition ease-in-out duration-300 delay-100;
+    @apply transition-all ease-in-out duration-300 delay-100;
 }
 
 .custom-hover-btn {
@@ -41,6 +41,6 @@
 }
 
 ::-webkit-scrollbar-thumb{
-    @apply bg-color-2 custom-transition hover:bg-color-3
+    @apply bg-color-2 custom-transition  hover:bg-color-3
 }
 

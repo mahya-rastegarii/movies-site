@@ -7,8 +7,8 @@ import 'swiper/css/effect-coverflow';
 // import 'swiper/css/pagination';
 // import 'swiper/css/navigation';
 
-import './simpleSlider.css'
-import BgRotateWrapper from '../Wrappers/BgRotateWrapper';
+// import './simpleSlider.css'
+import BgRotate from '../BgRotate/BgRotate';
 
 
 
@@ -26,22 +26,23 @@ export default function SimpleSlider({ title, images}) {
 
   return (
 
-    <div className="w-full flex justify-center items-start flex-col my-6">
+    <div className="w-full flex justify-center items-start flex-col lg:my-6">
 
 
     
-        <BgRotateWrapper width='w-2/12' padding='p-2'>
+        <BgRotate width=' w-6/12  md:w-3/12 lg:w-2/12' padding='p-1 lg:p-2'>
 
      <div className="flex justify-center items">
        <h4 className=' text-color-1 font-bold'>{title}</h4>
        
     </div>
-        </BgRotateWrapper>
+        </BgRotate>
  
    
   <div className='w-full h-full'>
 
         <Swiper
+        
         
         className=" w-full h-full m-8 p-20"
         
@@ -55,14 +56,35 @@ export default function SimpleSlider({ title, images}) {
         //   disableOnInteraction: false,
         // }}
         //  pagination={pagination}
+
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+          spaceBetween: 0
+            
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 12
+            
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 8
+           
+           
+          },
+        }}
+        
+
         modules={[Autoplay,FreeMode]}
        
           
           >
       {images.map((slide, index) => (
-        <SwiperSlide className="  bg-center bg-cover w-full h-64 flex justify-center items-center "  key={index}>
+        <SwiperSlide className="  bg-center bg-cover w-full h-44 lg:h-64 flex justify-center items-center "  key={index}>
           <div className=' w-full h-full  flex flex-col justify-center items-center'>
-          <img className="  w-full h-64 rounded-md cursor-pointer shadow-md" src={slide.image} alt={slide.name} />
+          <img className="  w-full h-44 lg:h-64 rounded-md cursor-pointer shadow-md" src={slide.image} alt={slide.name} />
           <div className='  px-2 -mt-3   rounded-lg shadow-md text-black  bg-color-hover '>
             <span className='text-md font-bold '>7.3</span>
             <span className='text-sm '>/10</span>

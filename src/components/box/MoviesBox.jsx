@@ -6,20 +6,21 @@ import { BsGlobe } from 'react-icons/bs';
 import { LuDownload } from 'react-icons/lu';
 import { RiUserLine } from 'react-icons/ri';
 
-import image from '../assets/img/64ea844aa5218-57583-210x315.jpg';
+import image from '../../assets/img/64ea845ca1606-57593-210x315.jpg';
 
-import BgRotateWrapper from './Wrappers/BgRotateWrapper';
-import ImdbLabel from './ImdbLabel';
+import BgRotate from '../BgRotate/BgRotate';
+import ImdbLabel from '../Label/ImdbLabel';
+import GenreLabel from '../Label/GenreLabel';
 export default function 
 () {
   return (
-    <BgRotateWrapper>
+    <BgRotate>
 
    
-    <div className='w-full p-4  flex  justify-center items-center  rounded-md shadow-md'>
-       <img className=' rounded-md shadow-xl' src={image} width={200} alt="coverImage" />
-       <div className='w-full flex flex-col justify-center items-center mr-4'>
-        <div className="flex w-full justify-between items-center">
+    <div className='w-full p-4   flex flex-col space-y-4 md:space-y-0 md:flex-row justify-center items-center  rounded-md shadow-md'>
+       <img className=' rounded-md shadow-xl  w-52' src={image}  alt="coverImage" />
+       <div className='w-full flex flex-col justify-center items-center md:mr-4'>
+        <div className="flex w-full flex-col md:flex-row justify-between items-center">
             <h4 className=' font-bold text-color-1 text-lg'> Name</h4>
             {/* <div className=' flex flex-col justify-center  items-center ml-4'>
                 <div className=' flex justify-center items-center'>
@@ -31,10 +32,20 @@ export default function
               <ImdbLabel textColor='text-color-1'/>
         </div>
         <div className="flex w-full flex-col text-color-1 text-bold space-y-3 ">
-        <div className=' flex justify-start opacity-60 items-center my-4 text-color-1 text-sm'>
-          <span className='border  border-color-3 bg-transparent  rounded-xl px-3 py-1 mx-2 '> اکشن</span>
+        <div className=' flex justify-center md:justify-start opacity-60 items-center my-4 text-color-1 text-sm'>
+          {/* <span className='border  border-color-3 bg-transparent  rounded-xl px-3 py-1 mx-2 '> اکشن</span>
           <span className='border  border-color-3 bg-transparent  rounded-xl px-3 py-1 mx-2 '> فانتزی</span>
-          <span className='border  border-color-3 bg-transparent  rounded-xl px-3 py-1 mx-2 '> کلاسیک</span>
+          <span className='border  border-color-3 bg-transparent  rounded-xl px-3 py-1 mx-2 '> کلاسیک</span> */}
+
+          <GenreLabel borderColor= "border-color-3">
+            اکشن
+          </GenreLabel>
+          <GenreLabel borderColor= "border-color-3">
+            اکشن
+          </GenreLabel>
+          <GenreLabel borderColor= "border-color-3">
+            اکشن
+          </GenreLabel>
           </div>
             <div className='w-full flex justify-start items-center'><MdOutlineHighQuality className=' inline ml-2 text-xl text-color-2'/><span className=' '>کیفیت : </span></div>
             <div className='w-full flex justify-start items-center'><MdOutlineTimer className=' inline ml-2 text-xl text-color-2'/><span className=' '>زمان : </span></div>
@@ -45,12 +56,12 @@ export default function
             
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, aut.</p>
         </div>
-        <div className="w-full flex justify-end items-center text-color-1 px-3">
-            <button className=' bg-color-hover rounded-md px-2 text-lg  py-1 font-bold shadow-md hover:bg-color-hover custom-transition'>دانلود<LuDownload className='inline mr-1'/></button>
+        <div className="w-full flex justify-center md:justify-end items-center text-color-1 px-3 mt-4">
+            <button className=' w-full md:w-3/12 bg-color-hover rounded-md px-2 text-lg  py-1 font-bold shadow-md hover:bg-color-hover custom-transition'>دانلود<LuDownload className='inline mr-1'/></button>
         </div>
        </div>
 
     </div>
-    </BgRotateWrapper>
+    </BgRotate>
   )
 }

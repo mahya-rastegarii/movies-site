@@ -1,19 +1,23 @@
 import { useEffect, useState } from 'react';
 
 
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Login from './pages/Login'
-import Footer from './components/Footer'
-import ShowList from './pages/ShowList';
-import ScrollToTop from './components/ScrollToTop';
-import Movie from './pages/Movie';
-import Dashboard from './pages/Dashboard/Dashboard'
-import Register from './pages/Register';
+import Footer from './components/Footer/Footer';
+import Navbar from "./components/Navbar/Navbar";
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import SidebarMenu from './components/sideBar/SidebarMenu';
+import Dashboard from './pages/User/Dashboard/Dashboard';
+import Home from './pages/Home';
+import ShowList from './pages/Movie/ShowList';
+import Movie from './pages/Movie/Movie'
+import Login from './pages/User/Login'
+import Register from './pages/User/Register'
+import { useBackdropContext } from './Context/BackdropContext';
 
 function App() {
 
   const [backToTop, setBackToTop] =useState(false);
+  const {showMenu} = useBackdropContext()
+
 
     
   useEffect(() => {
@@ -33,12 +37,14 @@ function App() {
 
   
   return (
-    <div className="w-full relative bg-color-4 dark:theme-dark custom-transition">
-    <Navbar/>
-    <Home/>
+   
+
+<div className="w-full relative bg-color-4 dark:theme-dark custom-transition">
+    <Navbar />
+    {/* <Home/> */}
     {/* <ShowList/> */}
     {/* <Dashboard/> */}
-    {/* <Movie/> */}
+    <Movie/>
     {/* <Login/> */}
     {/* <Register/> */}
 
@@ -48,7 +54,16 @@ function App() {
       backToTop && <ScrollToTop/>
     }
    
+   {
+    showMenu && <SidebarMenu />
+   }
+     
+     
+   
     </div>
+
+  
+   
     
   )
 }

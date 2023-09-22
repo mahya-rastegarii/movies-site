@@ -33,7 +33,7 @@ export default function Slider3D() {
         loop={true}
         centeredSlides={true}
         //  slidesPerView={'auto'}
-        slidesPerView={2}
+        slidesPerView={3}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -51,13 +51,29 @@ export default function Slider3D() {
           //    prevEl: '.swiper-button-prev',
           //    clickable: true,
           //  }}
+
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+            
+              
+            },
+            768: {
+              slidesPerView: 2,
+              
+            },
+            1024: {
+              slidesPerView: 3,
+             
+            },
+          }}
           
           modules={[Autoplay, EffectCoverflow]}
           
           >
       {image.map((img, index) => (
         <SwiperSlide className="swiper-3DSlider bg-center bg-cover w-full flex justify-center items-center relative"  key={index}>
-          <img className=" block w-full h-64 rounded-md " src={img} alt={img} />
+          <img className=" block w-full h-44 lg:h-64 rounded-md " src={img} alt={img} />
         </SwiperSlide>
       ))}
     </Swiper>
