@@ -24,6 +24,8 @@ import bg11 from '../assets/img/64ea8477aa6ef-57615-210x315.jpg'
 import ImdbLabel from '../components/Label/ImdbLabel';
 import GenreLabel from '../components/Label/GenreLabel';
 import Slider3D from '../components/sliders/Slider3D';
+import { useBackdropContext } from '../Context/BackdropContext';
+import SidebarMenu from '../components/sideBar/SidebarMenu';
 
 
 
@@ -236,6 +238,8 @@ export default function Home() {
       ]
     },
   ]
+
+//   const {showMenu} = useBackdropContext()
   return (
     // <div className=' w-9/12 text-xl  font-semibold text-center text-red-700'></div>
    <div className=' w-full flex flex-col justify-center items-center '>
@@ -283,6 +287,9 @@ export default function Home() {
         }
         </div>
        </div>
+  
+    
+
    </div>
   )
 }

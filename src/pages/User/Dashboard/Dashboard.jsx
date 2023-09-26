@@ -1,13 +1,12 @@
-import React from 'react'
-import {MdOutlineFavoriteBorder, MdOutlineLogout} from 'react-icons/md';
-import { AiOutlineProfile, AiOutlineComment} from 'react-icons/ai'
+import React from 'react';
+import { AiOutlineComment, AiOutlineProfile } from 'react-icons/ai';
+import { MdOutlineFavoriteBorder, MdOutlineLogout } from 'react-icons/md';
 
 import BgRotate from '../../../components/BgRotate/BgRotate';
-import DashboardButton from '../../../components/Button/DashboardButton';
-import FavoritesList from './FavoritesList'
-import Profile from './Profile'
+import MenuItem from '../../../components/Button/MenuItem';
+import Profile from './Profile';
 
-import ProfilePhoto from '../../../assets/img/user.png'
+import ProfilePhoto from '../../../assets/img/user.png';
 
 export default function Dashboard() {
   return (
@@ -24,30 +23,30 @@ export default function Dashboard() {
             <ul className=' rounded-xl'>
 
           
-           <DashboardButton>
+           <MenuItem borderType="border-t" >
             <AiOutlineProfile className=' inline ml-2 text-xl'/>
            داشبورد
-           </DashboardButton>
-           <DashboardButton>
+           </MenuItem>
+           <MenuItem borderType="border-t" >
             <MdOutlineFavoriteBorder className=' inline ml-2 text-xl'/>
           لیست مورد علاقه ها 
-           </DashboardButton>
-           <DashboardButton>
+           </MenuItem>
+           <MenuItem borderType="border-t" >
             <AiOutlineComment className=' inline ml-2 text-xl'/>
             کامنت ها
-           </DashboardButton>
-           <DashboardButton textColor="text-red-500" rounded=" rounded-b-xl">
+           </MenuItem>
+           <MenuItem borderType="border-t" textColor="text-red-500" rounded=" rounded-b-xl">
             <MdOutlineLogout className=' inline ml-2 text-xl'/>
              خروج از حساب
-           </DashboardButton>
+           </MenuItem>
            </ul>
           </div>
         </div>
         <div className="  w-full md:w-7/12  lg:w-6/12">
         <BgRotate>
            <div className="w-full rounded-lg p-2">
-             {/* <Profile/> */}
-             <FavoritesList/>
+             <Profile/>
+             {/* <FavoritesList/> */}
            </div>
         </BgRotate>
         </div>

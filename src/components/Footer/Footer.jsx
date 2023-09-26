@@ -23,14 +23,14 @@ export default function Footer() {
         <li>
         
 
-          <Button type='link' width='w-full'>
+          <Button btnType='link' width='w-full'>
           <PiFilmSlateLight className=' inline text-xl ml-1'/>
           همه فیلم ها
           </Button>
           
         </li>
         <li>
-           <Button type='link' width='w-full'>
+           <Button btnType='link' width='w-full'>
           250 فیلم برتر IMDb
           </Button>
         {/* <button className=' hover:text-color-2 custom-transition'>
@@ -42,7 +42,7 @@ export default function Footer() {
       </ul>
       <ul className='  text-color-1 space-y-3 '>
       <li>
-        <Button type='link' width='w-full'>
+        <Button btnType='link' width='w-full'>
         <PiFilmReelLight className='inline text-xl ml-1'/>
         همه سریال ها
         </Button>
@@ -53,7 +53,7 @@ export default function Footer() {
 
       </li>
         <li>
-          <Button type='link' width='w-full'>
+          <Button btnType='link' width='w-full'>
            250 سریال برتر IMDb
           </Button>
         {/* <button className=' hover:text-color-2 custom-transition'>

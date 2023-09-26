@@ -1,10 +1,11 @@
 import React from 'react'
 
 import { IoIosArrowUp } from 'react-icons/io'
-import useReadingProgress from '../../hooks/useReadingProgress'
+import useReadingProgress from './useReadingProgress'
 import {useThemeContext} from '../../Context/ThemeContext'
 export default function ScrollToTop() {
   const {theme} = useThemeContext()
+  
 const completion = useReadingProgress()
       const scrollToTopHandler = () => {
         window.scrollTo({

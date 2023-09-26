@@ -11,12 +11,12 @@ import ShowList from './pages/Movie/ShowList';
 import Movie from './pages/Movie/Movie'
 import Login from './pages/User/Login'
 import Register from './pages/User/Register'
-import { useBackdropContext } from './Context/BackdropContext';
+import { BackdropProvider } from './Context/BackdropContext.jsx'
 
 function App() {
 
   const [backToTop, setBackToTop] =useState(false);
-  const {showMenu} = useBackdropContext()
+  
 
 
     
@@ -32,20 +32,23 @@ function App() {
         setBackToTop(false)
       }
     
+    
     })
   })
 
   
   return (
    
+<BackdropProvider>
+
 
 <div className="w-full relative bg-color-4 dark:theme-dark custom-transition">
     <Navbar />
     {/* <Home/> */}
     {/* <ShowList/> */}
     {/* <Dashboard/> */}
-    <Movie/>
-    {/* <Login/> */}
+    {/* <Movie/> */}
+    <Login/>
     {/* <Register/> */}
 
    
@@ -54,15 +57,15 @@ function App() {
       backToTop && <ScrollToTop/>
     }
    
-   {
-    showMenu && <SidebarMenu />
-   }
+   
      
+     <SidebarMenu/>
      
    
     </div>
 
   
+    </BackdropProvider>
    
     
   )

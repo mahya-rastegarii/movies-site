@@ -1,34 +1,20 @@
 import React from 'react';
 
-// import { BsSun, BsMoon } from 'react-icons/bs';
+
 import { BiMenu } from 'react-icons/bi';
 import { useBackdropContext } from '../../Context/BackdropContext';
 import ChangeThemeButton from '../Button/ChangeThemeButton';
 import Logo from '../Logo/Logo';
-import NavbarMenu from '../Menu/NavbarMenu';
+
 import { NavSearchBarDisplayLg, NavSearchBarDisplayMd } from '../Search/NavSearchBar';
-// import { useThemeContext } from '../Context/ThemeContext';
+import Button from '../Button/Button';
+
 
 export default function Navbar() {
 
   const {setShowMenu} =useBackdropContext()
   
-  // const {theme, setTheme} = useThemeContext()
-
-  // const element = document.documentElement
-
-  // const changeTheme = () => {
-  //   if(theme === "dark") {
-  //     setTheme("light")
-  //     element.classList.remove('dark')
-  //   } else {
-  //     setTheme('dark')
-  //     element.classList.add('dark')
-  //   }
-    
-  // }
-
-
+  
   return (
     <div className=' w-full relative bg-color-3 border-b border-color-1 overflow-x-hidden p-6 flex justify-between items-center '>
       <div className=' w-full px-2'>
@@ -37,36 +23,45 @@ export default function Navbar() {
           <NavSearchBarDisplayMd/>
           <ChangeThemeButton/>
         </div>
-        {/* <ul className=' hidden lg:flex justify-start items-center space-x-3 text-sm lg:text-md'>
-          
-          <li className='w-24  ml-3'>
-
-      <Button bgColor="bg-color-2" width='w-full'>
-        ثبت نام
-      </Button>
-     </li>
-     <li className='w-24 '>
-      <Button bgColor="bg-color-2" width="w-full">
-        ورود
-      </Button>
-          
-
-          </li>
-          <li>
-     
-      <ChangeThemeButton/>
-
-          </li>
-          <li className=''>
-            <button className='mr-8 hover:text-color-2 custom-transition w-full text-color-1 bg-transparent text-sm'>250 فیلم برتر IMDb</button>
-          </li>
-          <li>
-
-            <button className='mr-8 hover:text-color-2 custom-transition w-full text-color-1 bg-transparent text-sm'> 250 سریال برتر IMDb </button>
-          </li>
-        </ul> */}
+    
         <div className=' hidden lg:flex'>
-        <NavbarMenu/>
+      
+        <ul className=' flex    justify-start items-center space-x-3 text-sm text-md'>
+
+      <li className='w-24  lg:ml-3'>
+
+         <Button bgColor="bg-color-2" width='w-full'>
+ثبت نام
+</Button>
+</li>
+<li className='w-24 '>
+<Button bgColor="bg-color-2" width="w-full">
+ورود
+</Button>
+ 
+</li>
+<li>
+<div className=' lg:flex hidden'>
+<ChangeThemeButton/>
+</div>
+
+</li>
+<li>
+ 
+  <Button btnType='link' width='w-full' margin='ml-8'>
+  250 فیلم برتر IMDb
+  </Button>
+ 
+</li>
+<li>
+<Button btnType='link' width='w-full'ml-8 margin='ml-8'>
+ 250 سریال برتر IMDb 
+  </Button>
+  
+</li>
+
+
+</ul>
 
         </div>
       </div>
