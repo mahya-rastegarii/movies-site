@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Footer from './components/Footer/Footer';
 import Navbar from "./components/Navbar/Navbar";
@@ -43,23 +43,30 @@ function App() {
 
 
 <div className="w-full relative bg-color-4 dark:theme-dark custom-transition">
+  <BrowserRouter>
     <Navbar />
-    {/* <Home/> */}
+  <Routes>
+    <Route path='/' element={ <Home/>}/>
+    <Route path='/Movie' element={ <Movie/>}/>
+    <Route path='/List' element={ <ShowList/>}/>
+    <Route path='/Login' element={ <Login/>}/>
+    <Route path='/Register' element={ <Register/>}/>
     {/* <ShowList/> */}
     {/* <Dashboard/> */}
     {/* <Movie/> */}
-    <Login/>
+    {/* <Login/> */}
     {/* <Register/> */}
-
-   
+  </Routes>
     <Footer/>
     {
       backToTop && <ScrollToTop/>
     }
    
-   
-     
      <SidebarMenu/>
+  </BrowserRouter>
+   
+
+   
      
    
     </div>

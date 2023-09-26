@@ -5,6 +5,7 @@ import SocialMediaButton from '../Button/SocialMediaButton';
 import Logo from '../Logo/Logo';
 import { useThemeContext } from '../../Context/ThemeContext';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 
 export default function Footer() {
@@ -22,17 +23,20 @@ export default function Footer() {
       <ul className=' text-color-1 space-y-3'>
         <li>
         
-
+          <Link>
           <Button btnType='link' width='w-full'>
           <PiFilmSlateLight className=' inline text-xl ml-1'/>
           همه فیلم ها
           </Button>
+          </Link>
           
         </li>
         <li>
+          <Link>
            <Button btnType='link' width='w-full'>
           250 فیلم برتر IMDb
           </Button>
+          </Link>
         {/* <button className=' hover:text-color-2 custom-transition'>
         
            250 فیلم برتر IMDb
@@ -42,20 +46,24 @@ export default function Footer() {
       </ul>
       <ul className='  text-color-1 space-y-3 '>
       <li>
+        <Link>
         <Button btnType='link' width='w-full'>
         <PiFilmReelLight className='inline text-xl ml-1'/>
         همه سریال ها
         </Button>
+        </Link>
       {/* <button className=' hover:text-color-2 custom-transition'>
         <PiFilmReelLight className='inline text-xl ml-1'/>
         همه سریال ها
         </button> */}
 
       </li>
-        <li>
+        <li> 
+          <Link>
           <Button btnType='link' width='w-full'>
            250 سریال برتر IMDb
           </Button>
+          </Link>
         {/* <button className=' hover:text-color-2 custom-transition'>
           250 سریال برتر IMDb
         </button> */}

@@ -8,6 +8,7 @@ import Logo from '../Logo/Logo';
 
 import { NavSearchBarDisplayLg, NavSearchBarDisplayMd } from '../Search/NavSearchBar';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 
 export default function Navbar() {
@@ -30,14 +31,18 @@ export default function Navbar() {
 
       <li className='w-24  lg:ml-3'>
 
+          <Link to='/Register'>
          <Button bgColor="bg-color-2" width='w-full'>
-ثبت نام
-</Button>
-</li>
-<li className='w-24 '>
-<Button bgColor="bg-color-2" width="w-full">
-ورود
-</Button>
+        ثبت نام 
+         </Button>
+          </Link>
+         </li>
+     <li className='w-24 '>
+        <Link to="/Login">
+      <Button bgColor="bg-color-2" width="w-full">
+        ورود
+        </Button>
+        </Link>
  
 </li>
 <li>
@@ -47,16 +52,19 @@ export default function Navbar() {
 
 </li>
 <li>
- 
+ <Link to='/List'>
   <Button btnType='link' width='w-full' margin='ml-8'>
   250 فیلم برتر IMDb
   </Button>
+  </Link>
  
 </li>
 <li>
+ <Link to='/List'>
 <Button btnType='link' width='w-full'ml-8 margin='ml-8'>
  250 سریال برتر IMDb 
   </Button>
+  </Link>
   
 </li>
 
@@ -71,7 +79,7 @@ export default function Navbar() {
 
        <NavSearchBarDisplayLg/>
        </div>
-       <a href='/'> <Logo size=' text-2xl md:text-3xl lg:text-4xl'/></a>
+       <Link to="/"> <Logo size=' text-2xl md:text-3xl lg:text-4xl'/></Link>
       </div>
     
     </div>
