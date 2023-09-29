@@ -26,6 +26,9 @@ import GenreLabel from '../components/Label/GenreLabel';
 import Slider3D from '../components/sliders/Slider3D';
 import { useBackdropContext } from '../Context/BackdropContext';
 import SidebarMenu from '../components/sideBar/SidebarMenu';
+import { useState } from 'react';
+import { useSliderContext } from '../Context/SliderContext';
+import { Link } from 'react-router-dom';
 
 
 
@@ -34,11 +37,11 @@ export default function Home() {
 
 
   // const image = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9, bg10, bg11];
-
   const sliders = [
     {
-      // id:sliders.length + 1,
-      title: "محبوب ترین سریال ها",
+        // id:sliders.length + 1,
+        delay:2500,
+      title: " جدیدترین سریال ها",
       images : [
         {
             name: "Oppenheimer",
@@ -87,7 +90,8 @@ export default function Home() {
       ]
     },
     {
-      // id:sliders.length + 1,
+    //   id:sliders.length + 1,
+    delay:2700,
       title: "محبوب ترین فیلم ها",
       images : [
         {
@@ -138,7 +142,9 @@ export default function Home() {
     },
     {
       // id:sliders.length + 1,
-      title: "همه سریال ها",
+      delay:3000,
+
+      title: "محبوب ترین سریال ها",
       
       images : [
         {
@@ -187,9 +193,13 @@ export default function Home() {
         },
       ]
     },
+  
     {
       // id:sliders.length + 1,
-      title: " همه فیلم ها",
+      delay:3200,
+
+      title: "بالاترین امتیاز",
+      
       images : [
         {
             name: "Oppenheimer",
@@ -237,38 +247,49 @@ export default function Home() {
         },
       ]
     },
+  
   ]
 
-//   const {showMenu} = useBackdropContext()
+
+  const {imageInfo}= useSliderContext()
+  const genres = imageInfo.genres
   return (
     // <div className=' w-9/12 text-xl  font-semibold text-center text-red-700'></div>
    <div className=' w-full flex flex-col justify-center items-center '>
      
-     <HeaderBackdrop bg={bg}>
-        <div className='w-full md:w-8/12 lg:w-5/12 flex flex-col justify-center items-center lg:items-start z-10 space-y-4 lg:space-y-14'>
-            <h2 className='font-bold text-2xl text-white '> Title </h2>
+
+     <HeaderBackdrop bg={imageInfo.src}>
+        <div className='w-full md:w-8/12 lg:w-5/12 flex flex-col justify-center items-center lg:items-start z-10 space-y-4 lg:space-y-14 '>
+            <h2 className='font-bold text-2xl text-white '> {imageInfo.name} </h2>
             <div className='w-9/12 flex-col flex lg:flex-row justify-center lg:justify-start items-center  space-y-3 lg:space-y-0 lg:items-end '>
              
 
-              <ImdbLabel/>
-              <div className=' flex justify-between items-center  text-slate-300 space-x-5'>
-                {/* <span className='border  border-slate-300 bg-transparent text-slate-300 font-semibold rounded-lg px-3 py-1 mx-2 text-md '> اکشن</span>
-                <span className='border font-sans border-slate-300 bg-transparent text-slate-300 font-semibold rounded-lg px-3 py-1 mx-2 text-md '> اکشن</span> */}
+              <ImdbLabel score={imageInfo.score}/>
 
-                <GenreLabel borderColor='border-slate-300'>جنایی</GenreLabel>
-                <GenreLabel borderColor='border-slate-300'>جنایی</GenreLabel>
-              </div>
+              <div className=' flex justify-between items-center  text-slate-300 space-x-5 ' key={imageInfo.id}>
+              {
+                genres?.map(genre => (
+
+                     
+                         <GenreLabel borderColor='border-slate-300'>{genre}</GenreLabel>
+                         
+                         
+                         ))
+                        }
+                        </div>
             </div>
-            <p className=' hidden lg:block  w-9/12 font-serif text-lg text-white '>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi similique aut eum ex nulla odio sunt autem sit. Harum sit laborum quia necessitatibus fugit illo atque iste aliquam illum accusamus!</p>
+            <p className=' hidden lg:block  w-9/12 font-serif text-lg text-white '>{imageInfo.desc}</p>
+            <Link className='w-full md:w-2/12' to="/Movie"><button className=' w-full bg-color-hover rounded-md px-2 text-lg  py-1 font-bold shadow-md hover:bg-color-hover custom-transition'>دانلود</button></Link>
         </div>
-        <div className=' w-full md:w-8/12 lg:w-5/12  flex justify-center items-center backdrop-blur-md  border shadow-md border-white border-opacity-5 px-3 py-7 rounded-sm  z-10'> 
+        <div className=' w-full md:w-8/12 lg:w-5/12  flex justify-center items-center backdrop-blur-md  border shadow-sm border-white border-opacity-5 px-3 py-7 rounded-sm  z-10'> 
 
-          <Slider3D/>
+          <Slider3D />
 
 
          </div>
        
   </HeaderBackdrop> 
+  
 
        <div className=' w-full px-2  flex-col-reverse flex lg:flex-row justify-center items-start mb-12 my-2  lg:mb-0'>
         <div className="flex w-full lg:w-3/12  flex-col md:flex-row md:space-y-0 md:mb-12 lg:mb-0 lg:space-y-2 lg:flex-col space-y-2">

@@ -12,6 +12,7 @@ import Movie from './pages/Movie/Movie'
 import Login from './pages/User/Login'
 import Register from './pages/User/Register'
 import { BackdropProvider } from './Context/BackdropContext.jsx'
+import { SliderProvider } from './Context/SliderContext';
 
 function App() {
 
@@ -45,7 +46,9 @@ function App() {
 <div className="w-full relative bg-color-4 dark:theme-dark custom-transition">
   <BrowserRouter>
     <Navbar />
+    <SliderProvider>
   <Routes>
+
     <Route path='/' element={ <Home/>}/>
     <Route path='/Movie' element={ <Movie/>}/>
     <Route path='/List' element={ <ShowList/>}/>
@@ -57,6 +60,7 @@ function App() {
     {/* <Login/> */}
     {/* <Register/> */}
   </Routes>
+    </SliderProvider>
     <Footer/>
     {
       backToTop && <ScrollToTop/>
