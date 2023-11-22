@@ -1,15 +1,34 @@
 import React, { useState } from 'react';
-
+import Parse from 'parse/dist/parse.min.js'
 import RangeInput from '../input/rangeInput/RangeInput';
 
 import Button from '../Button/Button'
 import PostType from '../PostType';
+import { useEffect } from 'react';
+import { useGenreContext } from '../../Context/GenreContext';
 
 export default function AdvancedSearchBox() {
 
   const [IMDbSliderValue, setIMDbSliderValue] = useState([1, 10]);
   const [yearSliderValue, setYearSliderValue] = useState([1800, 2023]);
-
+  const [countries, setCountries]= useState([])
+ 
+  const {fetchMovieGenres, genre} = useGenreContext()
+  const fetchCountries = async() => {
+    const query = new Parse.Query('Countries')
+    try{
+      const results= await query.map((country)=> country.get('name'))
+      // console.log(results);
+      
+      setCountries(results)
+    }
+    catch(e){
+      console.log(e)
+      }
+  }
+ 
+ 
+ 
   const handleIMDbSliderChange= (value) =>{
      setIMDbSliderValue(value)
     
@@ -19,7 +38,10 @@ export default function AdvancedSearchBox() {
     setYearSliderValue(value)
  }
 
- 
+ useEffect(()=>{
+  fetchCountries();
+  fetchMovieGenres()
+ },[])
 
 
   return (
@@ -30,16 +52,19 @@ export default function AdvancedSearchBox() {
 
         <div className=' bg-transparent  flex justify-center items-center text-color-1 '>
             <span className=' text-md font-bold ml-8 md:ml-2'> نوع </span>
-            <PostType/>
+            <PostType />
         </div>
         <div className=' bg-transparent  flex justify-center items-center text-color-1 font-semibold '>
             <span className=' text-md ml-8 font-bold md:ml-2'> ژانر </span>
             <select className=' bg-color-4 shadow-md outline-none rounded-xl p-2 text-sm' >
-                <option className='' value=""> </option>
-                <option className='' value="">جنایی </option>
-                <option value=""> ترسناک </option>
-                <option value=""> درام </option>
-                <option value=""> معمایی </option>
+
+            <option  value='all'> همه </option>
+              {
+                genre?.map((genre, index) => (
+                  <option key={index} value={genre}>{genre}</option>
+                ))
+              }
+
              </select>
         </div>
           </div>
@@ -49,23 +74,22 @@ export default function AdvancedSearchBox() {
         <div className=' bg-transparent  flex justify-center items-center text-color-1 font-semibold'>
             <span className=' text-md ml-8 font-bold  md:ml-2'> کشور </span>
             <select className=' bg-color-4 shadow-md outline-none rounded-xl p-2 text-sm' >
-            <option value=""> </option>
-                <option className=' ' value=""> اسپانیا</option>
-                <option className=' ' value=""> آمریکا</option>
-                <option className=' ' value=""> ایران </option>
-                <option className=' ' value=""> ترکیه </option>
-                <option className=' ' value=""> آلمان </option>
-                <option className=' ' value=""> کانادا </option>
+            {
+              countries?.map((country,index) =>{
+                // console.log(index);
+                return(<option key={index} value={country}>{country}</option>)
+              })
+            }
+             
              </select>
         </div>
         <div className=' bg-transparent  flex justify-center items-center text-color-1 font-semibold '>
             <span className=' text-md font-bold ml-8  md:ml-2'> وضعیت  </span>
             <select className=' bg-color-4 shadow-md outline-none rounded-xl p-2 text-sm' name="" id="">
-            <option value=""> </option>
                 <option value=""> در حال پخش</option>
                 <option value="">  پایان یافته </option>
                 <option value=""> کنسل شده </option>
-                <option value=""> منتشر نشده </option>
+
              </select>
         </div>
           </div>

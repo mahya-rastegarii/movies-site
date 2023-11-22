@@ -1,20 +1,96 @@
+import Parse from 'parse/dist/parse.min.js';
 import React from 'react';
 
 
 import { BiMenu } from 'react-icons/bi';
+// import { useDataFetchContext } from '../../Context/DataFetchContext';
+
 import { useBackdropContext } from '../../Context/BackdropContext';
 import ChangeThemeButton from '../Button/ChangeThemeButton';
 import Logo from '../Logo/Logo';
 
-import { NavSearchBarDisplayLg, NavSearchBarDisplayMd } from '../Search/NavSearchBar';
-import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
+import { NavSearchBarDisplayLg, NavSearchBarDisplayMd } from '../Search/NavSearchBar';
+import FetchTopMovie from '../../fetch/FetchTopMovie';
+// import { fetchTopDataSeries } from '../../Context/Fetch/SeriesFetchData';
+// import { fetchTopDataMovies } from '../../Context/Fetch/MoviesFetchData';
 
 
 export default function Navbar() {
-
-  const {setShowMenu} =useBackdropContext()
   
+  const {setShowMenu} =useBackdropContext()
+  // const {setAllData}= useDataFetchContext()
+  
+  // const fetchDataMovies = async() => {
+  //    const query = new Parse.Query("Movies")
+  //    try{
+  //     query.addAscending('topMovie');
+  //     let queryResult = await query.find();
+  //     let result = []
+  //     await queryResult.filter((item, index) => 
+  //       {
+
+  //          if(item.get("topMovie") > 0){ 
+          
+  //           result.push( {
+  //             id: index,
+  //             name:item.get('name'),
+  //             genre:item.get('genre'),
+  //             pic:item.get('pic')._url,
+  //             director:item.get('director'),
+  //             country:item.get('country'),
+  //             year:item.get('year'),
+  //             rate:item.get('imdbRating'),
+  //             summary:item.get('summary'),
+  //             time:item.get('time')
+  //             })
+          
+
+  //                }
+  //                   }) 
+         
+  //       console.log("data",result)
+  //       setAllData(result)
+  //                 }catch (e) {
+  //     console.log(e);
+  //    }
+  // }
+  // const fetchDataWSeries = async() => {
+  //   const query = new Parse.Query("Series");
+  //   try{
+  //     query.addAscending('topMovie');
+  //     let queryResult = await query.find();
+  //     let result = []
+  //     await queryResult.filter((item, index) => 
+  //     {
+
+  //        if(item.get("topMovie") > 0){ 
+               
+  //         result.push( {
+  //           id: index,
+  //           name:item.get('name'),
+  //           genre:item.get('genre'),
+  //           pic:item.get('pic')._url,
+  //           director:item.get('director'),
+  //           country:item.get('country'),
+  //           year:item.get('year'),
+  //           rate:item.get('imdbRating'),
+  //           summary:item.get('summary'),
+  //           time:item.get('time')
+  //           })
+        
+
+  //              }
+  //                 }) 
+       
+  //     console.log("data",result)
+  //     setAllData(result)
+  //               }catch (e) {
+  //   console.log(e);
+  //  }
+      
+  // }
   
   return (
     <div className=' w-full relative bg-color-3 border-b border-color-1 overflow-x-hidden p-6 flex justify-between items-center '>
@@ -53,7 +129,7 @@ export default function Navbar() {
 </li>
 <li>
  <Link to='/List'>
-  <Button btnType='link' width='w-full' margin='ml-8'>
+  <Button btnType='link' width='w-full' margin='ml-8' clicked={FetchTopMovie('Movies')}>
   250 فیلم برتر IMDb
   </Button>
   </Link>
@@ -61,7 +137,7 @@ export default function Navbar() {
 </li>
 <li>
  <Link to='/List'>
-<Button btnType='link' width='w-full'ml-8 margin='ml-8'>
+<Button btnType='link' width='w-full'ml-8 margin='ml-8' clicked={FetchTopMovie('Series')}>
  250 سریال برتر IMDb 
   </Button>
   </Link>

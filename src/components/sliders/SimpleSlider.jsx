@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 
+import {useDataFetchContext} from '../../Context/DataFetchContext'
+
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import {Autoplay, FreeMode} from 'swiper/modules';
@@ -11,13 +13,23 @@ import {Autoplay, FreeMode} from 'swiper/modules';
 // import './simpleSlider.css'
 import Button from "./../Button/Button"
 import BgRotate from '../BgRotate/BgRotate';
+import { useNavigate } from 'react-router-dom';
 
 
 
-export default function SimpleSlider({ title, images,delay}) {
+export default function SimpleSlider({ title, data : allData, delay}) {
  
-  
-const [isAutoplay, setIsAutoplay]= useState(false)
+ const navigate = useNavigate()
+  const [isAutoplay, setIsAutoplay]= useState(false)
+  // const [data, setData]= useState()
+  const {setData}= useDataFetchContext()
+
+ const filmInfo = (name) => {
+   const filterData = allData.filter( filmName => filmName.name === name)
+   setData(filterData[0])
+   navigate('/Movie')
+   console.log(filterData)
+ }
 //   const pagination={
 //     clickable: true,
 //     renderBullet: function (index, className) {
@@ -53,7 +65,7 @@ const [isAutoplay, setIsAutoplay]= useState(false)
         className=" w-full h-full m-8 p-20"
         
         slidesPerView={5}
-        spaceBetween={12}
+        spaceBetween={2}
         loop={true}
         freeMode={true}
       // centeredSlides={true}
@@ -72,12 +84,12 @@ const [isAutoplay, setIsAutoplay]= useState(false)
           },
           768: {
             slidesPerView: 3,
-            spaceBetween: 12
+            spaceBetween: 4
             
           },
           1024: {
             slidesPerView: 5,
-            spaceBetween: 8
+            spaceBetween: 2
            
            
           },
@@ -88,12 +100,12 @@ const [isAutoplay, setIsAutoplay]= useState(false)
        
           
           >
-      {images.map((slide, index) => (
-        <SwiperSlide className="  bg-center bg-cover w-full h-44 lg:h-64 flex justify-center items-center hover:scale-105 custom-transition my-4 "  key={index}>
-          <div className=' w-full h-full  flex flex-col justify-center items-center'>
-          <img className="  w-full h-44 lg:h-64 rounded-md cursor-pointer  shadow-md " src={slide.image} alt={slide.name} />
+      {allData?.map((slide) => (
+        <SwiperSlide className="  bg-center bg-cover w-full h-44 lg:h-64 flex justify-center items-center hover:scale-105 custom-transition my-4 "  key={slide.id}>
+          <div className=' w-full h-full  flex flex-col justify-center items-center' onClick={() => filmInfo(slide.name)}>
+          <img className="  w-52 h-44 lg:h-64 rounded-lg cursor-pointer  shadow-md " src={slide.pic} alt={slide.name} />
           <div className='  px-2 -mt-3   rounded-lg shadow-md text-black  bg-color-hover '>
-            <span className='text-md font-bold '>7.3</span>
+            <span className='text-md font-bold '>{slide.rate}</span>
             <span className='text-sm '>/10</span>
             </div>
             <span className=' text-md text-color-1 font-semibold'>{slide.name}</span>
