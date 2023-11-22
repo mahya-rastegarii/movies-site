@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "@parse/react": "^0.0.1-alpha.18",
     "formik": "^2.4.5",
+    "parse": "^4.2.0",
     "rc-slider": "^10.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

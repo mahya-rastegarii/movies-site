@@ -12,7 +12,8 @@ export default {
             1: 'var(--bg-color-4)',
             2:'var(--color)',
             3:'var(--text-color)',
-            4:'var(--bg-color-2)'
+            4:'var(--bg-color-2)',
+            5: 'var(--bg-color-3)',
          }
       },
       textColor: {

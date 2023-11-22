@@ -7,7 +7,7 @@
     :root{
       
       --text-color:rgb(31, 29, 29);
-      --color :rgb(202 138 4);
+      --color :rgb(234 179 8);
       --bg-color-1:rgb(203 213 225);
       --bg-color-2 :rgb(226 232 240);
       --bg-color-3 :rgb(241 245 249);
@@ -33,7 +33,7 @@
 }
 
 .custom-hover-btn {
- @apply py-1 px-6 ml-2 rounded-lg hover:text-color-2   custom-transition delay-150 focus:bg-color-hover focus:hover:text-color-1
+ @apply py-1 px-6 ml-2 rounded-lg hover:text-color-2  custom-transition delay-150
 }
 
 ::-webkit-scrollbar{
