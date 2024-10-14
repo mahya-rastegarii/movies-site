@@ -1,15 +1,15 @@
 export const Images = [
   {
-    id: 1,
+    id: 0,
     name: "Oppenheimer",
     pic: "/pic/bg1.webp",
     rate: 8.2,
     genres: ["بیوگرافی", "جنایی"],
     summary:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non quasi dignissimos unde blanditiis fugit nulla voluptatibus labore reprehenderit eius repudiandae. Quo ratione eaque dolorem mollitia incidunt recusandae neque, praesentium accusamus.",
-  },
+  }, 
   {
-    id: 2,
+    id: 1,
     name: "noHardFeelings",
     pic: "/pic/bg2.webp",
     rate: 8.1,
@@ -18,7 +18,7 @@ export const Images = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non quasi dignissimos unde blanditiis fugit nulla voluptatibus labore reprehenderit eius repudiandae. Quo ratione eaque dolorem mollitia incidunt recusandae neque, praesentium accusamus.",
   },
   {
-    id: 3,
+    id: 2,
     name: "theLittleMermaid",
     pic: "/pic/bg3.webp",
     rate: 7.1,
@@ -27,7 +27,7 @@ export const Images = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non quasi dignissimos unde blanditiis fugit nulla voluptatibus labore reprehenderit eius repudiandae. Quo ratione eaque dolorem mollitia incidunt recusandae neque, praesentium accusamus.",
   },
   {
-    id: 4,
+    id: 3,
     name: "qWQSnedj0LCUjWNp9fLcMtfgadp",
     pic: "/pic/bg4.webp",
     rate: 8.2,
@@ -36,7 +36,7 @@ export const Images = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non quasi dignissimos unde blanditiis fugit nulla voluptatibus labore reprehenderit eius repudiandae. Quo ratione eaque dolorem mollitia incidunt recusandae neque, praesentium accusamus.",
   },
   {
-    id: 5,
+    id: 4,
     name: "spider-man-across-the-spider-verse-2023-cover",
     pic: "/pic/bg5.webp",
     rate: 7.8,
@@ -46,7 +46,7 @@ export const Images = [
   },
 
   {
-    id: 6,
+    id: 5,
     name: "hiddenStrike",
     pic: "/pic/bg6.webp",
     rate: 7.2,

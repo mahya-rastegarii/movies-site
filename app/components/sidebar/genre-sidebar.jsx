@@ -1,5 +1,7 @@
 
+'use client';
 
+import {useState} from 'react';
 import { GenresData } from "@/app/fetch/genere-data";
 import PostType from "../button/postType";
 import Button from "../button/button";
@@ -8,6 +10,14 @@ import Button from "../button/button";
 
 function GenreSidebar() {
 
+const [activeGenre, setActiveGenre] =useState()
+
+  const getDataGenre = (e) => {
+    const value = e.target.innerText;
+
+    setActiveGenre(value);
+
+  }
   
  
     return (
@@ -20,12 +30,21 @@ function GenreSidebar() {
     
         
             <>
-              <div className=" w-full shadow-md flex justify-between items-center p-2 bg-color-2 rounded-xl  hover:bg-color-hover cursor-pointer custom-transition delay-150">
-                <div className=" w-full " >
-                  <span>همه</span>
-                </div>
+              {/* <div className=" w-full  flex justify-between items-center p-2 bg-color-2 rounded-xl  hover:bg-color-hover cursor-pointer custom-transition delay-150"> */}
+            
+                 <Button
+                    width="w-full"
+                    
+                    active={activeGenre === "همه"}
+                    bgColor=" bg-color-2"
+                    clicked={getDataGenre}
+                   
+                  >
+                    همه
+                  </Button>
+                
                 {/* <span>{countAll}</span> */}
-              </div>
+              {/* </div> */}
     
               <div className="w-full grid gap-3 justify-items-center grid-cols-1 md:grid-cols-2">
                 {GenresData?.map((genre, index) => (
@@ -33,8 +52,9 @@ function GenreSidebar() {
                   <Button
                     width="w-full"
                     // active={activeGenre === genre}
+                    active={activeGenre === genre}
                     bgColor=" bg-color-2"
-                    // clicked={getDataGenre}
+                    clicked={getDataGenre}
                     key={index}
                   >
                     {genre}

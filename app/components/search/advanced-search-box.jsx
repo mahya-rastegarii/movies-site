@@ -1,3 +1,6 @@
+'use client';
+
+
 import PostType from "../button/postType";
 import {GenresData } from "@/app/fetch/genere-data";
 import {useState } from 'react'
